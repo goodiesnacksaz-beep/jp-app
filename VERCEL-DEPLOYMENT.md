@@ -197,11 +197,30 @@ Now that you know your Vercel URL:
    ```
 3. Save and redeploy
 
-Also update in Supabase:
-1. Go to Supabase Dashboard
-2. Authentication > URL Configuration
-3. Set Site URL: `https://your-actual-app.vercel.app`
-4. Add to Redirect URLs: `https://your-actual-app.vercel.app/auth/callback`
+### ⚠️ CRITICAL: Update Supabase URLs
+
+**Without this, email confirmation links will redirect to localhost!**
+
+1. Go to **Supabase Dashboard**: https://app.supabase.com
+2. Select your project
+3. Navigate to **Authentication** → **URL Configuration**
+4. Update these settings:
+
+   **Site URL**:
+   ```
+   https://your-actual-app.vercel.app
+   ```
+   
+   **Redirect URLs** (add both, one per line):
+   ```
+   https://your-actual-app.vercel.app/auth/callback
+   http://localhost:3000/auth/callback
+   ```
+   *(Keep localhost for local development)*
+
+5. Click **Save**
+
+**What this fixes**: Email confirmation, password reset, and magic link emails will now use your production URL instead of localhost.
 
 ## Step 6: Create Admin User
 
