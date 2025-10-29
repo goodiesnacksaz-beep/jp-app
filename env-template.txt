@@ -1,0 +1,106 @@
+# ============================================
+# JP VOCAB - ENVIRONMENT VARIABLES TEMPLATE
+# ============================================
+# INSTRUCTIONS: 
+# 1. Copy this file and rename it to: .env.local
+# 2. Fill in your actual values below
+# 3. Never commit .env.local to version control!
+
+# ============================================
+# SUPABASE (REQUIRED)
+# ============================================
+# Get these from your Supabase project: Settings > API
+# Project URL format: https://xxxxxxxxxxxxx.supabase.co
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url_here
+
+# Public anon key (safe to expose to client)
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+
+# Service role key (KEEP SECRET - server-side only)
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key_here
+
+# ============================================
+# STRIPE (REQUIRED FOR PAYMENTS)
+# ============================================
+# Get these from Stripe Dashboard: Developers > API keys
+# Use TEST keys for development (pk_test_xxx, sk_test_xxx)
+# Use LIVE keys for production (pk_live_xxx, sk_live_xxx)
+
+# Publishable key (safe to expose)
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_publishable_key_here
+
+# Secret key (KEEP SECRET - server-side only)
+STRIPE_SECRET_KEY=sk_test_your_secret_key_here
+
+# Webhook signing secret (from Stripe Dashboard: Developers > Webhooks)
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret_here
+
+# Price ID for ad-free upgrade (from Stripe Dashboard: Products)
+STRIPE_AD_FREE_PRICE_ID=price_your_price_id_here
+
+# ============================================
+# GOOGLE ADSENSE (OPTIONAL)
+# ============================================
+# Only needed if you want to show ads
+# Get from AdSense after approval
+# Format: ca-pub-xxxxxxxxxxxxxxxx
+NEXT_PUBLIC_ADSENSE_CLIENT_ID=ca-pub-your_adsense_id_here
+
+# ============================================
+# APPLICATION URL
+# ============================================
+# Use http://localhost:3000 for development
+# Use your actual domain for production
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+# ============================================
+# QUICK START EXAMPLE VALUES (FOR TESTING)
+# ============================================
+# You can use these placeholder values to test the build:
+# (The app won't actually work, but it will compile)
+#
+# NEXT_PUBLIC_SUPABASE_URL=https://placeholder.supabase.co
+# NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.placeholder
+# SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.placeholder
+# NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_placeholder
+# STRIPE_SECRET_KEY=sk_test_placeholder
+# STRIPE_WEBHOOK_SECRET=whsec_placeholder
+# STRIPE_AD_FREE_PRICE_ID=price_placeholder
+# NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+# ============================================
+# SETUP INSTRUCTIONS
+# ============================================
+# STEP 1: Create Supabase Account
+#   - Go to https://supabase.com
+#   - Create new project
+#   - Copy URL and keys from Settings > API
+#
+# STEP 2: Set Up Database
+#   - Open SQL Editor in Supabase
+#   - Copy contents of supabase-schema.sql
+#   - Run the SQL script
+#
+# STEP 3: Create Stripe Account
+#   - Go to https://stripe.com
+#   - Create account and get test keys
+#   - Create a product for "Ad-Free Upgrade"
+#   - Copy the Price ID
+#
+# STEP 4: Fill This File
+#   - Replace all "your_xxx_here" values
+#   - Save as .env.local (remove .txt extension)
+#
+# STEP 5: Install & Run
+#   npm install
+#   npm run dev
+#
+# STEP 6: Create Admin User
+#   - Sign up at http://localhost:3000/signup
+#   - In Supabase SQL Editor, run:
+#     UPDATE public.users 
+#     SET role = 'admin' 
+#     WHERE email = 'your-email@example.com';
+#
+# See QUICKSTART.md for detailed instructions!
+

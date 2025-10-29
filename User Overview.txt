@@ -1,0 +1,29 @@
+Website description and functionality:
+A japanese vocabulary learning website, where users can access vocabulary quizzes for animes by episode.
+An admin adds entries for animes that allow users to take tests based on episodes.
+Admin creates vocabulary lists that contain word, reading(in the form of hiragana) and meaning.
+Admin creates this in the format of a csv, admin will use an external tool to create the CSV. It involves extracting vocabulary from an SRT for an anime episode.
+Admin should be able to access a dashboard to post CSVs so users can access the vocabulary lists and run quizzes with those vocabulary lists.
+	Example:
+	Admin uploads CSV vocabulary list for Season 1 Episode 1 of Attack on Titan
+	Once uploaded user can go to Anime Directory and access the list for quizzing.
+	User sees Attack on Titan > Season 1 > Episode 1
+
+Ensure admin can select/create anime name as well as season and episode on same page for CSV upload.
+Admin assumes CSV is up-to-date and correct, but allow the admin to update and edit vocabulary list word, reading(in the form of hiragana) and meaning through same page UI before submitting it to user access.
+
+Users should open the website to a landing page that showcases/presents what the website is about. Call to action buttons for Signup and login. Email Password signups.
+
+Once user is logged in, they are taken to their dashboard. Here they can select from available anime episodes and engage in quizzes.
+Give users the option to select what type of quiz they would like to take (e.g. Question: Meaning of vocab word(alongside hiragana reading)?)
+Ensure users can set the number(minimum of 10) of questions for the quiz with a drop down. Allow the user to test on all vocab lists.
+Once a user selects a 1 out of 4 option for their answer, provide feedback(show correct answer if wrong and correct if right) before the user clicks on next question.
+
+Add basic user settings page.
+Users will be shown banner ads, likely implementation google.
+Users should have the option to make a one time payment for an ad free experience, likely implementation stripe.
+
+Project Settings:
+Next.js 
+Recommend database(Supabase preferred)
+Recommend remaining necessary technologies
