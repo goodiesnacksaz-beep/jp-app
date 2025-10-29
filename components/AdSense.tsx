@@ -35,17 +35,12 @@ export default function AdSense({
     return null;
   }
 
-  // Don't render if no client ID is configured
-  if (!process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID) {
-    return null;
-  }
-
   return (
     <div className={className}>
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}
-        data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}
+        data-ad-client="ca-pub-5877458992457161"
         data-ad-slot={adSlot}
         data-ad-format={adFormat}
         data-full-width-responsive={fullWidthResponsive.toString()}
