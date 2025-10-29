@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/lib/context/AuthContext";
 import { BookOpen, LayoutDashboard, Settings, LogOut, Shield } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -12,6 +12,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const router = useRouter();
   const { user, signOut } = useAuth();
 
   const navigation = [
@@ -31,6 +32,7 @@ export default function DashboardLayout({
 
   const handleSignOut = async () => {
     await signOut();
+    router.push("/login");
   };
 
   return (
