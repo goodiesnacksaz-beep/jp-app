@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase/client";
 import { useAuth } from "@/lib/context/AuthContext";
@@ -12,7 +12,7 @@ import { Loader2, CheckCircle2, XCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import AdSense from "@/components/AdSense";
 
-export default function QuizPage() {
+function QuizContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { user } = useAuth();
@@ -260,7 +260,7 @@ export default function QuizPage() {
                 </div>
               </div>
             )}
-            
+
             {/* Word Details */}
             <div className="mt-4 pt-4 border-t border-gray-300">
               <h5 className="font-semibold text-gray-900 mb-2">Word Details:</h5>
@@ -286,6 +286,18 @@ export default function QuizPage() {
       {/* Bottom Ad */}
       <AdSense adSlot="0987654321" className="my-4" />
     </div>
+  );
+}
+
+export default function QuizPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-[400px]">
+        <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+      </div>
+    }>
+      <QuizContent />
+    </Suspense>
   );
 }
 

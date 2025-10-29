@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase/client";
 import { VocabularyWord, QuizType } from "@/lib/types/database.types";
@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Loader2 } from "lucide-react";
 
-export default function QuizSetupPage() {
+function QuizSetupContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const listId = searchParams.get("listId");
@@ -21,7 +21,7 @@ export default function QuizSetupPage() {
   useEffect(() => {
     const fetchData = async () => {
       if (!listId) return;
-      
+
       try {
         const { data, error } = await supabase
           .from("vocabulary_words")
@@ -36,18 +36,18 @@ export default function QuizSetupPage() {
         setLoading(false);
       }
     };
-    
+
     fetchData();
   }, [listId]);
 
   const getQuestionOptions = () => {
     const options = [10, 20, 30, 50];
     const validOptions = options.filter(opt => opt <= vocabularyCount);
-    
+
     if (vocabularyCount > 0 && !validOptions.includes(vocabularyCount)) {
       validOptions.push(vocabularyCount);
     }
-    
+
     return validOptions.sort((a, b) => a - b);
   };
 
@@ -57,7 +57,7 @@ export default function QuizSetupPage() {
       type: quizType,
       count: questionCount.toString(),
     });
-    
+
     router.push(`/quiz?${params.toString()}`);
   };
 
@@ -211,6 +211,18 @@ export default function QuizSetupPage() {
         </CardContent>
       </Card>
     </div>
+  );
+}
+
+export default function QuizSetupPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-[400px]">
+        <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+      </div>
+    }>
+      <QuizSetupContent />
+    </Suspense>
   );
 }
 
