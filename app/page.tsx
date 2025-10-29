@@ -1,7 +1,19 @@
+"use client";
+
+import { useEffect } from "react";
 import Link from "next/link";
 import { BookOpen, Brain, Sparkles, Trophy } from "lucide-react";
 
 export default function HomePage() {
+    useEffect(() => {
+        // Initialize AdSense ads
+        try {
+            // @ts-ignore
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (err) {
+            console.error("AdSense error:", err);
+        }
+    }, []);
     return (
         <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
             {/* Navigation */}
@@ -53,6 +65,22 @@ export default function HomePage() {
                     </Link>
                 </div>
             </section>
+
+            {/* Ad Unit for AdSense Verification */}
+            {process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID && (
+                <section className="container mx-auto px-4 py-8">
+                    <div className="max-w-4xl mx-auto">
+                        <ins
+                            className="adsbygoogle"
+                            style={{ display: "block" }}
+                            data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}
+                            data-ad-slot="1234567890"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"
+                        ></ins>
+                    </div>
+                </section>
+            )}
 
             {/* Features Section */}
             <section className="container mx-auto px-4 py-20">
