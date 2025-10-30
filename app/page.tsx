@@ -21,7 +21,7 @@ export default function HomePage() {
                 <div className="container mx-auto px-4 py-4 flex justify-between items-center">
                     <div className="flex items-center space-x-2">
                         <BookOpen className="h-8 w-8 text-blue-600" />
-                        <span className="text-2xl font-bold text-gray-900">JP Vocab</span>
+                        <span className="text-2xl font-bold text-gray-900">KOTOBAnime</span>
                     </div>
                     <div className="flex space-x-4">
                         <Link
@@ -83,7 +83,7 @@ export default function HomePage() {
             {/* Features Section */}
             <section className="container mx-auto px-4 py-20">
                 <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-                    Why Choose JP Vocab?
+                    Why Choose KOTOBAnime?
                 </h2>
                 <div className="grid md:grid-cols-3 gap-8">
                     <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
@@ -219,7 +219,7 @@ export default function HomePage() {
             {/* Footer */}
             <footer className="border-t bg-gray-50">
                 <div className="container mx-auto px-4 py-8 text-center text-gray-600">
-                    <p>&copy; 2025 JP Vocab. All rights reserved.</p>
+                    <p>&copy; 2025 KOTOBAnime. All rights reserved.</p>
                 </div>
             </footer>
         </div>

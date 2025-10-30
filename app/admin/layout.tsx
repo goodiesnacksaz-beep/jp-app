@@ -43,7 +43,7 @@ export default function AdminLayout({
           <div className="flex justify-between items-center h-16">
             <Link href="/admin/upload" className="flex items-center space-x-2">
               <BookOpen className="h-8 w-8 text-blue-600" />
-              <span className="text-2xl font-bold text-gray-900">JP Vocab Admin</span>
+              <span className="text-2xl font-bold text-gray-900">KOTOBAnime Admin</span>
             </Link>
 
             <div className="flex items-center space-x-4">

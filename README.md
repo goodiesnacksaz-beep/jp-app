@@ -1,6 +1,8 @@
-# JP Vocab - Japanese Vocabulary Learning Through Anime
+# KOTOBAnime - Japanese Vocabulary Learning Through Anime
 
 A full-stack web application for learning Japanese vocabulary through interactive quizzes based on anime episodes.
+
+**Live Site:** [kotobanime.com](https://kotobanime.com)
 
 ## 🚀 Features
 

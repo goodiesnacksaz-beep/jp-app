@@ -7,12 +7,13 @@ import { AuthProvider } from "@/lib/context/AuthContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "JP Vocab - Learn Japanese Through Anime",
+    title: "KOTOBAnime - Learn Japanese Through Anime",
     description: "Master Japanese vocabulary by taking quizzes based on your favorite anime episodes.",
     openGraph: {
-        title: "JP Vocab - Learn Japanese Through Anime",
+        title: "KOTOBAnime - Learn Japanese Through Anime",
         description: "Master Japanese vocabulary by taking quizzes based on your favorite anime episodes.",
         type: "website",
+        url: "https://kotobanime.com",
     },
 };
 
