@@ -10,6 +10,7 @@ export const demoVocabulary: VocabularyWord[] = [
     meaning: "advance/attack",
     order_index: 1,
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
     id: "demo-2",
@@ -19,6 +20,7 @@ export const demoVocabulary: VocabularyWord[] = [
     meaning: "giant/titan",
     order_index: 2,
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
     id: "demo-3",
@@ -28,6 +30,7 @@ export const demoVocabulary: VocabularyWord[] = [
     meaning: "wall",
     order_index: 3,
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
     id: "demo-4",
@@ -37,6 +40,7 @@ export const demoVocabulary: VocabularyWord[] = [
     meaning: "investigation/survey",
     order_index: 4,
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
     id: "demo-5",
@@ -46,6 +50,7 @@ export const demoVocabulary: VocabularyWord[] = [
     meaning: "corps/regiment",
     order_index: 5,
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
     id: "demo-6",
@@ -55,6 +60,7 @@ export const demoVocabulary: VocabularyWord[] = [
     meaning: "humanity/mankind",
     order_index: 6,
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
     id: "demo-7",
@@ -64,6 +70,7 @@ export const demoVocabulary: VocabularyWord[] = [
     meaning: "battle/combat",
     order_index: 7,
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
     id: "demo-8",
@@ -73,6 +80,7 @@ export const demoVocabulary: VocabularyWord[] = [
     meaning: "training",
     order_index: 8,
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
     id: "demo-9",
@@ -82,6 +90,7 @@ export const demoVocabulary: VocabularyWord[] = [
     meaning: "freedom",
     order_index: 9,
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
     id: "demo-10",
@@ -91,6 +100,7 @@ export const demoVocabulary: VocabularyWord[] = [
     meaning: "world",
     order_index: 10,
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
     id: "demo-11",
@@ -100,6 +110,7 @@ export const demoVocabulary: VocabularyWord[] = [
     meaning: "enemy",
     order_index: 11,
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
     id: "demo-12",
@@ -109,6 +120,7 @@ export const demoVocabulary: VocabularyWord[] = [
     meaning: "companion/comrade",
     order_index: 12,
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
     id: "demo-13",
@@ -118,6 +130,7 @@ export const demoVocabulary: VocabularyWord[] = [
     meaning: "danger",
     order_index: 13,
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
     id: "demo-14",
@@ -127,6 +140,7 @@ export const demoVocabulary: VocabularyWord[] = [
     meaning: "hope",
     order_index: 14,
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
     id: "demo-15",
@@ -136,6 +150,7 @@ export const demoVocabulary: VocabularyWord[] = [
     meaning: "future",
     order_index: 15,
     created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
 ];
 
