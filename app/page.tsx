@@ -58,6 +58,12 @@ export default function HomePage() {
                         Get Started Free
                     </Link>
                     <Link
+                        href="/demo"
+                        className="px-8 py-4 bg-purple-600 text-white text-lg rounded-lg hover:bg-purple-700 transition-colors font-semibold"
+                    >
+                        Try Demo Quiz
+                    </Link>
+                    <Link
                         href="/login"
                         className="px-8 py-4 bg-white text-blue-600 text-lg rounded-lg border-2 border-blue-600 hover:bg-blue-50 transition-colors font-semibold"
                     >
@@ -207,12 +213,20 @@ export default function HomePage() {
                     <p className="text-xl mb-8 opacity-90">
                         Join thousands of learners mastering Japanese vocabulary through anime.
                     </p>
-                    <Link
-                        href="/signup"
-                        className="inline-block px-8 py-4 bg-white text-blue-600 text-lg rounded-lg hover:bg-gray-100 transition-colors font-semibold"
-                    >
-                        Sign Up Now - It&apos;s Free!
-                    </Link>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Link
+                            href="/signup"
+                            className="inline-block px-8 py-4 bg-white text-blue-600 text-lg rounded-lg hover:bg-gray-100 transition-colors font-semibold"
+                        >
+                            Sign Up Now - It&apos;s Free!
+                        </Link>
+                        <Link
+                            href="/demo"
+                            className="inline-block px-8 py-4 bg-purple-700 text-white text-lg rounded-lg hover:bg-purple-800 transition-colors font-semibold border-2 border-white"
+                        >
+                            Try Demo First
+                        </Link>
+                    </div>
                 </div>
             </section>
 
