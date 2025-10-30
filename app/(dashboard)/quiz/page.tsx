@@ -92,7 +92,7 @@ function QuizContent() {
   };
 
   const finishQuiz = async () => {
-    const correctCount = answers.filter((a) => a.isCorrect).length + (selectedAnswer === questions[currentQuestionIndex].correctAnswer ? 1 : 0);
+    const correctCount = answers.filter((a) => a.isCorrect).length;
 
     // Save quiz attempt
     try {
@@ -108,18 +108,7 @@ function QuizContent() {
     }
 
     // Navigate to results
-    const allAnswers = [...answers];
-    if (selectedAnswer) {
-      allAnswers.push({
-        questionId: questions[currentQuestionIndex].id,
-        selectedAnswer,
-        isCorrect: selectedAnswer === questions[currentQuestionIndex].correctAnswer,
-        correctAnswer: questions[currentQuestionIndex].correctAnswer,
-        vocabularyWord: questions[currentQuestionIndex].vocabularyWord,
-      });
-    }
-
-    sessionStorage.setItem("quizResults", JSON.stringify(allAnswers));
+    sessionStorage.setItem("quizResults", JSON.stringify(answers));
     router.push("/quiz/results");
   };
 

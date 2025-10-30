@@ -60,18 +60,7 @@ export default function DemoQuizPage() {
   };
 
   const finishQuiz = () => {
-    const allAnswers = [...answers];
-    if (selectedAnswer) {
-      allAnswers.push({
-        questionId: questions[currentQuestionIndex].id,
-        selectedAnswer,
-        isCorrect: selectedAnswer === questions[currentQuestionIndex].correctAnswer,
-        correctAnswer: questions[currentQuestionIndex].correctAnswer,
-        vocabularyWord: questions[currentQuestionIndex].vocabularyWord,
-      });
-    }
-
-    sessionStorage.setItem("demoQuizResults", JSON.stringify(allAnswers));
+    sessionStorage.setItem("demoQuizResults", JSON.stringify(answers));
     router.push("/demo/results");
   };
 
