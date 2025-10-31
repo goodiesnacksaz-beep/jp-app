@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase/client";
 import { AnimeWithSeasons } from "@/lib/types/database.types";
-import { ChevronDown, ChevronRight, PlayCircle, Loader2 } from "lucide-react";
+import { ChevronDown, ChevronRight, PlayCircle, Loader2, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 
@@ -211,12 +211,21 @@ export default function DashboardPage() {
                                   )}
                                 </div>
                                 {episode.vocabulary_lists.length > 0 && (
-                                  <Link
-                                    href={`/quiz/setup?listId=${episode.vocabulary_lists[0].id}`}
-                                    className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors"
-                                  >
-                                    Start Quiz
-                                  </Link>
+                                  <div className="flex gap-2">
+                                    <Link
+                                      href={`/study?listId=${episode.vocabulary_lists[0].id}`}
+                                      className="px-4 py-2 bg-purple-600 text-white text-sm rounded-lg hover:bg-purple-700 transition-colors flex items-center"
+                                    >
+                                      <BookOpen className="h-4 w-4 mr-1" />
+                                      Study
+                                    </Link>
+                                    <Link
+                                      href={`/quiz/setup?listId=${episode.vocabulary_lists[0].id}`}
+                                      className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors"
+                                    >
+                                      Start Quiz
+                                    </Link>
+                                  </div>
                                 )}
                               </div>
                             ))}
