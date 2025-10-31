@@ -37,16 +37,10 @@ export default function HomePage() {
                             Contact
                         </Link>
                         <Link
-                            href="/login"
-                            className="px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors"
-                        >
-                            Login
-                        </Link>
-                        <Link
-                            href="/signup"
+                            href="/dashboard"
                             className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                         >
-                            Sign Up
+                            Enter Site
                         </Link>
                     </div>
                 </div>
@@ -64,22 +58,16 @@ export default function HomePage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link
-                        href="/signup"
+                        href="/dashboard"
                         className="px-8 py-4 bg-blue-600 text-white text-lg rounded-lg hover:bg-blue-700 transition-colors font-semibold"
                     >
-                        Get Started Free
+                        Enter Site
                     </Link>
                     <Link
                         href="/demo"
                         className="px-8 py-4 bg-purple-600 text-white text-lg rounded-lg hover:bg-purple-700 transition-colors font-semibold"
                     >
                         Try Demo Quiz
-                    </Link>
-                    <Link
-                        href="/login"
-                        className="px-8 py-4 bg-white text-blue-600 text-lg rounded-lg border-2 border-blue-600 hover:bg-blue-50 transition-colors font-semibold"
-                    >
-                        Sign In
                     </Link>
                 </div>
             </section>
@@ -213,16 +201,16 @@ export default function HomePage() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
-                            href="/signup"
+                            href="/dashboard"
                             className="inline-block px-8 py-4 bg-white text-blue-600 text-lg rounded-lg hover:bg-gray-100 transition-colors font-semibold"
                         >
-                            Sign Up Now - It&apos;s Free!
+                            Start Learning Now
                         </Link>
                         <Link
                             href="/demo"
                             className="inline-block px-8 py-4 bg-purple-700 text-white text-lg rounded-lg hover:bg-purple-800 transition-colors font-semibold border-2 border-white"
                         >
-                            Try Demo First
+                            Try Demo Quiz
                         </Link>
                     </div>
                 </div>

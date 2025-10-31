@@ -2,14 +2,16 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/lib/context/AuthContext";
 import { QuizAnswer } from "@/lib/quiz-logic";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { Trophy, RotateCcw, Home, CheckCircle2, XCircle } from "lucide-react";
+import { Trophy, RotateCcw, Home, CheckCircle2, XCircle, Info } from "lucide-react";
 import { calculatePercentage } from "@/lib/utils";
 
 export default function QuizResultsPage() {
   const router = useRouter();
+  const { user } = useAuth();
   const [answers, setAnswers] = useState<QuizAnswer[]>([]);
 
   useEffect(() => {
@@ -42,6 +44,33 @@ export default function QuizResultsPage() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
+      {/* Sign Up Banner for non-authenticated users */}
+      {!user && (
+        <Card className="border-2 border-blue-500 bg-blue-50">
+          <CardContent className="pt-6">
+            <div className="flex items-start space-x-4">
+              <Info className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Sign Up to Track Your Progress!
+                </h3>
+                <p className="text-gray-700 mb-4">
+                  Create a free account to save your quiz attempts and track your learning progress over time.
+                </p>
+                <div className="flex gap-3">
+                  <Button onClick={() => router.push("/signup")} size="sm">
+                    Sign Up Free
+                  </Button>
+                  <Button onClick={() => router.push("/login")} variant="outline" size="sm">
+                    Login
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
       {/* Results Header */}
       <Card className="border-2 border-blue-500">
         <CardContent className="pt-6">

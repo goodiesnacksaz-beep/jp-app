@@ -10,22 +10,17 @@ export async function middleware(req: NextRequest) {
         data: { session },
     } = await supabase.auth.getSession();
 
-    // Protected routes
-    const protectedRoutes = ["/dashboard", "/settings", "/quiz"];
+    // Only admin routes are protected now
     const adminRoutes = ["/admin"];
     const authRoutes = ["/login", "/signup"];
 
     const path = req.nextUrl.pathname;
 
-    // Check if accessing protected route
-    const isProtectedRoute = protectedRoutes.some((route) =>
-        path.startsWith(route)
-    );
     const isAdminRoute = adminRoutes.some((route) => path.startsWith(route));
     const isAuthRoute = authRoutes.some((route) => path.startsWith(route));
 
-    // Redirect to login if accessing protected route without session
-    if (isProtectedRoute && !session) {
+    // Redirect to login if accessing admin route without session
+    if (isAdminRoute && !session) {
         return NextResponse.redirect(new URL("/login", req.url));
     }
 
@@ -38,7 +33,7 @@ export async function middleware(req: NextRequest) {
             .single();
 
         if (!user || user.role !== "admin") {
-            return NextResponse.redirect(new URL("/dashboard", req.url));
+            return NextResponse.redirect(new URL("/", req.url));
         }
     }
 
@@ -52,9 +47,6 @@ export async function middleware(req: NextRequest) {
 
 export const config = {
     matcher: [
-        "/dashboard/:path*",
-        "/settings/:path*",
-        "/quiz/:path*",
         "/admin/:path*",
         "/login",
         "/signup",

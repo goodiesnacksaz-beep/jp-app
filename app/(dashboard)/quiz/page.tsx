@@ -94,17 +94,19 @@ function QuizContent() {
   const finishQuiz = async () => {
     const correctCount = answers.filter((a) => a.isCorrect).length;
 
-    // Save quiz attempt
-    try {
-      await supabase.from("quiz_attempts").insert({
-        user_id: user?.id,
-        vocabulary_list_id: listId,
-        quiz_type: quizType,
-        total_questions: questions.length,
-        correct_answers: correctCount,
-      });
-    } catch (error) {
-      console.error("Error saving quiz attempt:", error);
+    // Save quiz attempt (only if user is logged in)
+    if (user?.id) {
+      try {
+        await supabase.from("quiz_attempts").insert({
+          user_id: user.id,
+          vocabulary_list_id: listId,
+          quiz_type: quizType,
+          total_questions: questions.length,
+          correct_answers: correctCount,
+        });
+      } catch (error) {
+        console.error("Error saving quiz attempt:", error);
+      }
     }
 
     // Navigate to results

@@ -31,10 +31,10 @@ export default function ContactPage() {
                             Login
                         </Link>
                         <Link
-                            href="/signup"
+                            href="/dashboard"
                             className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                         >
-                            Sign Up
+                            Enter Site
                         </Link>
                     </div>
                 </div>
@@ -163,10 +163,10 @@ export default function ContactPage() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link
-                                href="/signup"
+                                href="/dashboard"
                                 className="px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
                             >
-                                Sign Up Free
+                                Start Learning
                             </Link>
                             <Link
                                 href="/demo"
