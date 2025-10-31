@@ -14,44 +14,7 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
 function SettingsContent() {
   const searchParams = useSearchParams();
   const { user, refreshUser } = useAuth();
-
-  // Show sign-up prompt for non-authenticated users
-  if (!user) {
-    return (
-      <div className="max-w-2xl mx-auto">
-        <Card>
-          <CardHeader>
-            <CardTitle>Account Settings</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-center py-8">
-              <AlertCircle className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Sign Up to Track Your Progress
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Create an account to save your quiz attempts, track your progress, and unlock additional features.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/signup"
-                  className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-                >
-                  Sign Up Free
-                </a>
-                <a
-                  href="/login"
-                  className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors font-semibold"
-                >
-                  Login
-                </a>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
+  
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -157,6 +120,44 @@ function SettingsContent() {
       setPaymentLoading(false);
     }
   };
+
+  // Show sign-up prompt for non-authenticated users
+  if (!user) {
+    return (
+      <div className="max-w-2xl mx-auto">
+        <Card>
+          <CardHeader>
+            <CardTitle>Account Settings</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="text-center py-8">
+              <AlertCircle className="h-16 w-16 text-blue-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                Sign Up to Track Your Progress
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Create an account to save your quiz attempts, track your progress, and unlock additional features.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/signup"
+                  className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                >
+                  Sign Up Free
+                </a>
+                <a
+                  href="/login"
+                  className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors font-semibold"
+                >
+                  Login
+                </a>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
