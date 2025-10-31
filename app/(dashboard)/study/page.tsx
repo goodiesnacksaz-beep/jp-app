@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
@@ -29,7 +29,7 @@ interface VocabularyList {
   episode_id: string;
 }
 
-export default function StudyPage() {
+function StudyContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const listId = searchParams.get("listId");
@@ -364,6 +364,18 @@ export default function StudyPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function StudyPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-[400px]">
+        <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+      </div>
+    }>
+      <StudyContent />
+    </Suspense>
   );
 }
 
