@@ -9,20 +9,29 @@
 -- DROP OLD POLICIES
 -- ============================================
 
--- Drop old anime policies
+-- Drop all anime policies
 DROP POLICY IF EXISTS "Anyone can view animes" ON public.animes;
+DROP POLICY IF EXISTS "Admins can insert animes" ON public.animes;
+DROP POLICY IF EXISTS "Admins can update animes" ON public.animes;
+DROP POLICY IF EXISTS "Admins can delete animes" ON public.animes;
 
--- Drop old season policies
+-- Drop all season policies
 DROP POLICY IF EXISTS "Anyone can view seasons" ON public.seasons;
+DROP POLICY IF EXISTS "Admins can manage seasons" ON public.seasons;
 
--- Drop old episode policies
+-- Drop all episode policies
 DROP POLICY IF EXISTS "Anyone can view episodes" ON public.episodes;
+DROP POLICY IF EXISTS "Admins can manage episodes" ON public.episodes;
 
--- Drop old vocabulary list policies
+-- Drop all vocabulary list policies
 DROP POLICY IF EXISTS "Users can view published vocabulary lists" ON public.vocabulary_lists;
+DROP POLICY IF EXISTS "Anyone can view published vocabulary lists" ON public.vocabulary_lists;
+DROP POLICY IF EXISTS "Admins can manage vocabulary lists" ON public.vocabulary_lists;
 
--- Drop old vocabulary words policies
+-- Drop all vocabulary words policies
 DROP POLICY IF EXISTS "Users can view vocabulary words from published lists" ON public.vocabulary_words;
+DROP POLICY IF EXISTS "Anyone can view vocabulary words from published lists" ON public.vocabulary_words;
+DROP POLICY IF EXISTS "Admins can manage vocabulary words" ON public.vocabulary_words;
 
 -- ============================================
 -- CREATE NEW POLICIES WITH ANONYMOUS ACCESS
@@ -50,7 +59,8 @@ CREATE POLICY "Admins can update animes"
     EXISTS (
       SELECT 1 FROM public.users
       WHERE id = auth.uid() AND role = 'admin'
-    )
+    )-- Animes table policies (public read for everyone, admin write)
+
   );
 
 CREATE POLICY "Admins can delete animes"
