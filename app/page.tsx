@@ -84,20 +84,6 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* Ad Unit for AdSense Verification */}
-            <section className="container mx-auto px-4 py-8">
-                <div className="max-w-4xl mx-auto">
-                    <ins
-                        className="adsbygoogle"
-                        style={{ display: "block" }}
-                        data-ad-client="ca-pub-5877458992457161"
-                        data-ad-slot="1234567890"
-                        data-ad-format="auto"
-                        data-full-width-responsive="true"
-                    ></ins>
-                </div>
-            </section>
-
             {/* Features Section */}
             <section className="container mx-auto px-4 py-20">
                 <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
