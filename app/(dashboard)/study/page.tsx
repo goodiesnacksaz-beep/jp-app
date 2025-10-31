@@ -47,6 +47,7 @@ export default function StudyPage() {
     } else {
       router.push("/dashboard");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [listId, router]);
 
   const fetchVocabularyList = async () => {
@@ -131,7 +132,7 @@ export default function StudyPage() {
         </CardHeader>
         <CardContent>
           <p className="text-gray-600 mb-4">
-            This vocabulary list doesn't have any words yet.
+            This vocabulary list does not have any words yet.
           </p>
           <Button onClick={() => router.push("/dashboard")}>
             <Home className="h-5 w-5 mr-2" />
