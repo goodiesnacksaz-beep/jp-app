@@ -25,6 +25,18 @@ export default function HomePage() {
                     </div>
                     <div className="flex space-x-4">
                         <Link
+                            href="/about"
+                            className="px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                        >
+                            About
+                        </Link>
+                        <Link
+                            href="/contact"
+                            className="px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                        >
+                            Contact
+                        </Link>
+                        <Link
                             href="/login"
                             className="px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors"
                         >
@@ -231,9 +243,25 @@ export default function HomePage() {
             </section>
 
             {/* Footer */}
-            <footer className="border-t bg-gray-50">
-                <div className="container mx-auto px-4 py-8 text-center text-gray-600">
-                    <p>&copy; 2025 KOTOBAnime. All rights reserved.</p>
+            <footer className="border-t bg-gray-50 dark:bg-gray-800">
+                <div className="container mx-auto px-4 py-8">
+                    <div className="flex flex-col md:flex-row justify-between items-center">
+                        <div className="flex items-center space-x-2 mb-4 md:mb-0">
+                            <BookOpen className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                            <span className="text-xl font-bold text-gray-900 dark:text-white">KOTOBAnime</span>
+                        </div>
+                        <div className="flex space-x-6 mb-4 md:mb-0">
+                            <Link href="/about" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                                About
+                            </Link>
+                            <Link href="/contact" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                                Contact
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="text-center mt-4 text-gray-600 dark:text-gray-400 text-sm">
+                        © {new Date().getFullYear()} KOTOBAnime. All rights reserved.
+                    </div>
                 </div>
             </footer>
         </div>
