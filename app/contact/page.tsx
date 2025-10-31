@@ -68,11 +68,11 @@ export default function ContactPage() {
                         </p>
                         <div className="text-center">
                             <a
-                                href="mailto:vegachrisaz@gmail.com"
+                                href="mailto:support@kotobanime.com"
                                 className="inline-flex items-center space-x-2 text-2xl font-semibold text-blue-600 hover:text-blue-700 transition-colors"
                             >
                                 <Mail className="h-6 w-6" />
-                                <span>vegachrisaz@gmail.com</span>
+                                <span>support@kotobanime.com</span>
                             </a>
                         </div>
                     </div>
